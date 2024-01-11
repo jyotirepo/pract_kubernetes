@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: re-dep
+ labels:
+  app: web-app
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   app: recreate
+ template:
+  metadata:
+   labels:
+    app: recreate
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/pandeysp/production:v1
+ strategy:
+  type: Recreate

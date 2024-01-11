@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: rs-app-1
+spec:
+ replicas: 3
+ selector:
+  matchExpressions:
+  - key: "app"
+    operator: "In"
+    values:
+    - "nginx"
+    - "west"
+ template:
+  metadata:
+   labels:
+    app: west
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/pandeysp/nginxdemo

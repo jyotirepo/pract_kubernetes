@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+ name: dspod
+spec:
+ selector:
+  matchLabels:
+   app: monitor
+ template:
+  metadata:
+   labels:
+    app: monitor
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/pandeysp/nginxdemo

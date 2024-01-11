@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: empty-pod
+spec:
+ volumes:
+ - name: tempo
+   emptyDir: {}
+ containers:
+ - name: c1
+   image: quay.io/pandeysp/nginxdemo
+   volumeMounts:
+   - name: tempo
+     mountPath: /mydata
+

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: pood-sa
+ namespace: test
+spec:
+ containers:
+ - name: c1
+   image: quay.io/pandeysp/nginxdemo
+ serviceAccountName: default

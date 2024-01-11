@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: ecom
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   app: ecommerce
+ template:
+  metadata:
+   labels:
+    app: ecommerce
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/pandeysp/mywebapp
+

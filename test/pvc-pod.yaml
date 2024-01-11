@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: pvpod
+spec:
+ volumes:
+ - name: myvol
+   persistentVolumeClaim:
+    claimName: pvc1
+ containers:
+ - name: c1
+   image: quay.io/pandeysp/nginxdemo
+   volumeMounts:
+   - name: myvol
+     mountPath: /mycon

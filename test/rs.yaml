@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: rstest-app
+ namespace: test
+spec:
+ replicas: 5
+ selector:
+  matchLabels:
+   app: web-app
+ template:
+  metadata:
+   labels: 
+    app: web-app
+  spec:
+   containers:
+   - name: c1
+     image: redis

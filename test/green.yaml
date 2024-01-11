@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: green-dep
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   app: frontend
+   version: green
+ template:
+  metadata:
+   labels:
+    app: frontend
+    version: green
+  spec:
+   containers:
+   - name: c1
+     image: quay.io/pandeysp/production:v2

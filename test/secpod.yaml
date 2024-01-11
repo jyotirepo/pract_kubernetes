@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: sec-pod
+spec:
+ containers:
+ - name: c1
+   image: quay.io/pandeysp/mysql
+   envFrom:
+   - secretRef:
+      name: sec
+     

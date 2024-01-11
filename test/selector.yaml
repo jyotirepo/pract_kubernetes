@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: selector-pod
+spec:
+ containers:
+ - name: c1
+   image: quay.io/pandeysp/nginxdemo
+ nodeSelector:
+  env: prod
+  

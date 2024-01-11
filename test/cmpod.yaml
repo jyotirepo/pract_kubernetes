@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: cm-pod
+spec:
+ containers:
+ - name: c1
+   image: quay.io/pandeysp/mysql
+   envFrom:
+   - configMapRef:
+      name: conf
